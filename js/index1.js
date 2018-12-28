@@ -55,7 +55,7 @@ var quotes=[
       }
 
 
-     var topic = ["這是 Check In 資料庫"];
+     var topic = ["嗨，想聊些什麼？"];
      var group = ["這是問題分類"];
      var group2 = [""];
      var estTime = [""];
