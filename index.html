@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -81,8 +81,14 @@
       <div class="col-xs-12 col-md-6"> <img src="img/about.JPG" class="img-responsive" alt=""> </div>
       <div class="col-xs-12 col-md-6">
         <div class="about-text">
-          <p>Check-in是什麼？</p>
-          <p>Check-in使用方式</p>
+          <h5>Check-in是什麼？</h5>
+          <p>Check-in是一個team building的方式之一，透過會議前的話題來活絡團隊的氣氛。</p>
+          <h5>Check-in使用方式</h5>
+          <br>
+          <p>1.在接下來的區段輸入欲check-in的人數</p>
+          <p>2.在接下來的區段輸入預估總check-in時長</p>
+          <p>3.點選「開始抽題」，系統將推薦一個最適合的題目</p>
+          <p>4.帶著這個題目去和團隊聊聊吧！</p>
           <a href="#portfolio" class="btn btn-default btn-lg page-scroll">進入系統</a> </div>
       </div>
     </div>
@@ -95,42 +101,28 @@
       <h2>話題推薦傳送門</h2>
       <hr>
     </div>
-    <!-- <div class="categories">
-      <ul class="cat">
-        <li>
-          <ol class="type">
-            <li><a href="#" data-filter="*" class="active">全類型題目</a></li>
-            <li><a href="#" data-filter=".web">短短型</a></li>
-            <li><a href="#" data-filter=".photography">機率型</a></li>
-            <li><a href="#" data-filter=".product">精彩故事型</a></li>
-            <li><a href="#" data-filter=".product">時事型</a></li>
-            <li><a href="#" data-filter=".product">強開心房型</a></li>
-            <li><a href="#" data-filter=".web">娛樂型</a></li>
-          </ol>
-        </li>
-      </ul>
-      <div class="clearfix"></div>
-    </div> -->
-
 
     <div class="row">
 
       <h2>團隊人數：<span id="outPeople"></span></h2>
       <!-- <p><span id="demo"></span></p> -->
       <div class="slidecontainer">
-        <input type="range" min="1" max="25" value="5" class="slider" id="sliderPeople">
+        <input type="range" min="1" max="25" value="0" class="slider" id="sliderPeople">
       </div>
       <br><br>
       <h2>預估總時長：<span id="outTime"></span>  min</h2>
       <!-- <p><span id="demo"></span></p> -->
       <div class="slidecontainer">
-        <input type="range" min="1" max="60" value="20" class="slider" id="sliderTime">
+        <input type="range" min="1" max="60" value="0" class="slider" id="sliderTime">
       </div>
-      <br><br>
+      <br>
+      <div class="btn btn-custom btn-lg " id="newquote">開始抽題</div>
+      <br><br><br><br>
+
 
       <!-- <div class="container"> -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-3"></div>
+      <!-- <div class="row"> -->
+        <div class="col-xs-12"></div>
         <div class="col-xs-12 col-sm-6 quotebox">
           <div class="row">
             <div class="col-xs-12">
@@ -144,126 +136,15 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12">
               </div>
-              <div class="quotebutton"><button class="btn btn-primary" id="newquote">抽一題</button></div>
+              <!-- <div class="quotebutton"><button class="btn btn-primary" id="newquote">抽一題</button></div> -->
+              <!-- <div class="btn btn-custom btn-lg " id="newquote">開始抽題</div> -->
+
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         <!-- </div> -->
 
 
-
-      <div class="portfolio-items">
-        <!-- <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-
-
-        <div class="col-sm-6 col-md-3 col-lg-3 product">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 product">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 photography">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 photography">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 product">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 photography">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 photography">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-              </div>
-              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div> -->
-      </div>
     </div>
   </div>
 </div>

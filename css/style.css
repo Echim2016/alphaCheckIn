@@ -133,8 +133,8 @@ hr {
 	transition: all 0.3s;
 }
 .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
-	color: #54d0dd;
-	background-color: #414a52;
+	/*color: #54d0dd;*/
+	/*background-color: #414a52;*/
 }
 .btn-default {
 	text-transform: uppercase;
@@ -156,7 +156,7 @@ hr {
 .intro {
 	display: table;
 	width: 100%;
-	padding: 0;
+	padding: 10px;
 	text-align: center;
 	background: url(../img/intro-bg.jpg) no-repeat center bottom;
 	background-color: #e5e5e5;
@@ -208,7 +208,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d0dd', end
 }
 /* Portfolio Section */
 #portfolio {
-	padding: 120px 0;
+	padding: 80px 0;
+	padding-left: 30px;
+	padding-right:30px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#54d0dd+0,54d0dd+0,54d0dd+0,71777d+0,414a52+100 */
 	background: rgb(84,208,221); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(84,208,221,1) 0%, rgba(84,208,221,1) 0%, rgba(84,208,221,1) 0%, rgba(113,119,125,1) 0%, rgba(65,74,82,1) 100%); /* FF3.6-15 */
@@ -218,6 +220,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d0dd', end
 }
 #portfolio h2 {
 	color: #54d0dd;
+	font-size: 30px;
 }
 .categories {
 	padding-bottom: 30px;

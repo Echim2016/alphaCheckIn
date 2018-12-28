@@ -35,18 +35,30 @@ var quotes=[
       var outPeople = document.getElementById("outPeople");
       var sliderTime = document.getElementById("sliderTime");
       var outTime = document.getElementById("outTime");
-      
+
+      var timeFactor = "10";
+
       outPeople.innerHTML = sliderPeople.value;
       outTime.innerHTML = sliderTime.value;
 
+      var persons = 1;
+      var mins = 1 ;
       sliderPeople.oninput = function() {
         outPeople.innerHTML = this.value;
+        persons = parseInt(document.getElementById("sliderPeople").value);
+        timeFactor = Math.floor(mins/persons);
       }
       sliderTime.oninput = function() {
         outTime.innerHTML = this.value;
+        mins = parseInt(document.getElementById("sliderTime").value);
+        timeFactor = Math.floor(mins/persons);
       }
+
+
      var topic = ["這是 Check In 資料庫"];
      var group = ["這是問題分類"];
+     var group2 = [""];
+     var estTime = [""];
 
      $.getJSON('https://spreadsheets.google.com/feeds/list/1_dTloIAxD4loWNOn3JeHcokU2uo5anzvjDKE3uCYmXs/od6/public/values?alt=json', function (data){
        // console.log(data.feed.entry[0]['gsx$topic']['$t']);
@@ -54,28 +66,36 @@ var quotes=[
        for (var i = 0; i < data.feed.entry.length; i++){
             topic[i] = data.feed.entry[i].gsx$topic['$t'];
             group[i] = data.feed.entry[i].gsx$group['$t'];
+            group2[i] = data.feed.entry[i].gsx$group2['$t'];
+            estTime[i]= data.feed.entry[i].gsx$time['$t'];
       }
-      // console.log(topic);
-      // console.log(group);
-
       });
 
-var currentQuote = "";
-var currentAuthor = "";
+var currentQuote = "這是 Check In 資料庫";
+var currentAuthor = "這是預估時間";
 var randomquote = "";
 var randomcolor = "";
 
 function getQuote() {
-    // randomquote = Math.floor(Math.random() * quotes.length);
+    console.log(timeFactor);
   	randomcolor = Math.floor(Math.random() * colors.length);
-    // currentQuote = quotes[randomquote][0];
-    // currentAuthor = quotes[randomquote][1];
     randomquote = Math.floor(Math.random() * topic.length);
+
+    while (estTime[randomquote] > timeFactor && estTime[randomquote]!="?") {
+      randomquote = Math.floor(Math.random() * topic.length);
+    }
+
     currentQuote = topic[randomquote];
-    currentAuthor = group[randomquote];
-	if (inIframe()) {
-		$('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=aLamm&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
-	}
+    currentAuthor = estTime[randomquote] + " （min）";
+
+    // if (estTime[randomquote] <= timeFactor || estTime[randomquote]=="?"){
+    //     currentQuote = topic[randomquote];
+    //     currentAuthor = estTime[randomquote] + " （min）";
+    // }
+
+	// if (inIframe()) {
+	// 	$('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=aLamm&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+	// }
 
 	$(document).ready(function () {
 	    $('html body').animate({
