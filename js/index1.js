@@ -86,7 +86,7 @@ function getQuote() {
     }
 
     currentQuote = topic[randomquote];
-    currentAuthor = estTime[randomquote] + " （min）";
+    currentAuthor = estTime[randomquote] + " （min/人）";
 
     // if (estTime[randomquote] <= timeFactor || estTime[randomquote]=="?"){
     //     currentQuote = topic[randomquote];
