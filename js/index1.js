@@ -36,13 +36,13 @@ var quotes=[
       var sliderTime = document.getElementById("sliderTime");
       var outTime = document.getElementById("outTime");
 
-      var timeFactor = "10";
+      var timeFactor = "0";
 
       outPeople.innerHTML = sliderPeople.value;
       outTime.innerHTML = sliderTime.value;
 
-      var persons = 1;
-      var mins = 1 ;
+      var persons = 2;
+      var mins = 5 ;
       sliderPeople.oninput = function() {
         outPeople.innerHTML = this.value;
         persons = parseInt(document.getElementById("sliderPeople").value);
@@ -71,8 +71,7 @@ var quotes=[
       }
       });
 
-var currentQuote = "這是 Check In 資料庫";
-var currentAuthor = "這是預估時間";
+
 var randomquote = "";
 var randomcolor = "";
 
@@ -81,12 +80,27 @@ function getQuote() {
   	randomcolor = Math.floor(Math.random() * colors.length);
     randomquote = Math.floor(Math.random() * topic.length);
 
-    while (estTime[randomquote] > timeFactor && estTime[randomquote]!="?") {
-      randomquote = Math.floor(Math.random() * topic.length);
+    if(timeFactor==0){
+      var currentQuote = "這是 Check In 資料庫";
+      var currentAuthor = "這是預估時間";
+      timeFactor = Math.floor(mins/persons);
+    }
+    else if(timeFactor<2){
+      currentQuote = "哎呀，看起來依照你們的人數和時間，現在並不適合check-in，你們要不要多留點時間呢？"
+      currentAuthor = "0" + " （min/人）";
+    }
+    else{
+
+      while (estTime[randomquote] > timeFactor) {
+        randomquote = Math.floor(Math.random() * topic.length);
+      }
+
+      currentQuote = topic[randomquote];
+      currentAuthor = estTime[randomquote] + " （min/人）";
+
     }
 
-    currentQuote = topic[randomquote];
-    currentAuthor = estTime[randomquote] + " （min/人）";
+
 
     // if (estTime[randomquote] <= timeFactor || estTime[randomquote]=="?"){
     //     currentQuote = topic[randomquote];
