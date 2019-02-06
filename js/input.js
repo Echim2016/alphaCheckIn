@@ -10,8 +10,16 @@ $('#submit-form').on('click', function(e) {
     dataType: "json",
     data: $form.serialize(),
     success: function(response){
-      alert('已收到您的回應，之後可能就會刷到你出的題目囉！');
-      location.reload();
+      // alert('已收到您的回應，之後可能就會刷到你出的題目囉！');
+      Swal.fire({
+        type: 'success',
+        title: 'weeeeee！！！已收到您的回應囉！',
+        showConfirmButton: false,
+        timer: 2000
+      })
+      setTimeout(function(){// wait for 5 secs(2)
+          location.reload(); // then reload the page.(3)
+     }, 2100);
       return true;
     }
   })
