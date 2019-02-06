@@ -13,7 +13,7 @@ $('#submit-form').on('click', function(e) {
       // alert('已收到您的回應，之後可能就會刷到你出的題目囉！');
       Swal.fire({
         type: 'success',
-        title: 'weeeeee！！！已收到您的回應囉！',
+        title: 'weeee！！已收到你的回應囉！',
         showConfirmButton: false,
         timer: 2000
       })
