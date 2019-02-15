@@ -10,7 +10,7 @@ $('#submit-form').on('click', function(e) {
     dataType: "json",
     data: $form.serialize(),
     success: function(response){
-      // alert('已收到您的回應，之後可能就會刷到你出的題目囉！');
+
       Swal.fire({
         type: 'success',
         title: 'weeee！！已收到你的回應囉！',
