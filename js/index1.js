@@ -60,15 +60,22 @@ var quotes=[
      var group2 = [""];
      var estTime = [""];
 
-     $.getJSON('https://spreadsheets.google.com/feeds/list/1_dTloIAxD4loWNOn3JeHcokU2uo5anzvjDKE3uCYmXs/od6/public/values?alt=json', function (data){
-       // console.log(data.feed.entry[0]['gsx$topic']['$t']);
-       // console.log(data.feed.entry.length);
-       for (var i = 0; i < data.feed.entry.length; i++){
-            topic[i] = data.feed.entry[i].gsx$topic['$t'];
-            group[i] = data.feed.entry[i].gsx$group['$t'];
-            group2[i] = data.feed.entry[i].gsx$group2['$t'];
-            estTime[i]= data.feed.entry[i].gsx$time['$t'];
-      }
+
+
+      var url = "https://sheets.googleapis.com/v4/spreadsheets/1_dTloIAxD4loWNOn3JeHcokU2uo5anzvjDKE3uCYmXs/values/check-in?key=AIzaSyC8QxEOSR2Yu1WuXehFeOY7kESmcVSpZsY"
+      $.getJSON(url, function(data) {
+        console.log(data.values);
+        console.log(data.values.length);
+         console.log(data.values[0]);
+
+           for (var i = 0; i < data.values.length; i++){
+                topic[i] = data.values[i][2];
+                group[i] = data.values[i][3];
+                group2[i] = data.values[i][4];
+                estTime[i]= data.values[i][6];
+
+          }
+
       });
 
 
